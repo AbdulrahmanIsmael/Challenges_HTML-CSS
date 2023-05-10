@@ -1,0 +1,189 @@
+@import "helpers/vars";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "helpers/anims";
+
+// importing Roboto Font
+@import url("https://fonts.googleapis.com/css2?&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  box-sizing: content-box;
+  width: 414px;
+  margin: auto;
+  min-height: 900px;
+  border-radius: 20px;
+  background-color: $main-color;
+  padding: 15px;
+  .container1 {
+    border-radius: 20px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px 10px;
+    header {
+      margin-bottom: 20px;
+      #nav-Links {
+        display: flex;
+        justify-content: end;
+        img {
+          &:last-of-type {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    #profile {
+      position: relative;
+      .background {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+      .avatar {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
+        width: 120px;
+      }
+      .aboutme {
+        margin: auto;
+        margin-top: 80px;
+        text-align: center;
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 24px;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+          img {
+            width: 16px;
+            background-color: $main-color;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 1px;
+          }
+        }
+        p {
+          color: #4a4a4a;
+        }
+      }
+    }
+    #details {
+      margin-top: 30px;
+      text-align: center;
+      .container-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        row-gap: 10px;
+        .num {
+          font-size: 24px;
+          font-weight: bold;
+          &:nth-of-type(2) {
+            color: $main-color;
+          }
+        }
+        .text {
+          font-size: 16px;
+          color: #4a4a4a;
+        }
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+      width: 100%;
+      padding: 20px 0;
+      background-color: $main-color;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      transition: 100ms ease;
+      &:active {
+        background-color: rgba(84, 81, 250, 0.3);
+        color: $main-color;
+      }
+    }
+
+    #skills {
+      margin-top: 30px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      .info {
+        span {
+          display: flex;
+          gap: 10px;
+          margin-top: 20px;
+          p {
+            color: #979797;
+            > strong {
+              color: #5f5f5f;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    .container1 {
+      #profile {
+        .background {
+          width: 100%;
+        }
+        .avatar {
+          width: 300px;
+          top: 200px;
+        }
+        .aboutme {
+          h1 {
+            font-size: 40px;
+            img {
+              width: 25px;
+            }
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+      #details {
+        margin-top: 40px;
+        margin-bottom: 25px;
+        .container-details {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(100px, 1fr));
+          row-gap: 15px;
+          .text {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+      .btn {
+        width: 500px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

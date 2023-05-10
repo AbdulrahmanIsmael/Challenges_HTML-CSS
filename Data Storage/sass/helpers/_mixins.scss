@@ -1,0 +1,25 @@
+@mixin center($dir) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCustom($dir, $main, $cross) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $main;
+  align-items: $cross;
+}
+
+@mixin maxMedia($num) {
+  @media (max-width: $num) {
+    @content;
+  }
+}
+
+@mixin minMedia($num) {
+  @media (min-width: $num) {
+    @content;
+  }
+}
